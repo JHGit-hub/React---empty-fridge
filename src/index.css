@@ -48,7 +48,7 @@ h4 {
     font-weight: 500;
 }
 
-p {
+p, span, li {
     font-family: "jura";
     font-size: 1rem;
 }

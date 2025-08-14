@@ -1,21 +1,30 @@
 import { NavLink } from "react-router";
-import houseSvg from '../../assets/svg-icons/house.svg';
-import listBulletSvg from '../../assets/svg-icons/list-bullets.svg';
-import bookSvg from '../../assets/svg-icons/book.svg';
+import { GoHome } from "react-icons/go";
+import { IoIosList } from "react-icons/io";
+import { LuBook } from "react-icons/lu";
 
 export default function Navbar() {
 
-    return ( 
-    
+    return (
+
         <div className="navbar">
-            <NavLink to="/home">
-                <img src={houseSvg} alt='Home' />
+            <NavLink to="/home"
+                style={({ isActive }) => ({
+                    color: isActive ? "var(--secondary-color)" : "#ffffff",
+                })}>
+                <GoHome size={26} />
             </NavLink>
-            <NavLink to="/list-recipe">
-                <img src={listBulletSvg} alt='List' />
+            <NavLink to="/list-recipe"
+                style={({ isActive }) => ({
+                    color: isActive ? "var(--secondary-color)" : "#ffffff",
+                })}>
+                <IoIosList size={26} />
             </NavLink>
-            <NavLink to="/favorite">
-                <img src={bookSvg} alt='Favorite' />
+            <NavLink to="/favorite"
+                style={({ isActive }) => ({
+                    color: isActive ? "var(--secondary-color)" : "#ffffff",
+                })}>
+                <LuBook size={26} />
             </NavLink>
         </div>
 

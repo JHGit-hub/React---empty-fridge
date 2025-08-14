@@ -18,7 +18,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 2px #222;
+    border-top: solid 2px #000000;
+    border-left: solid 2px #000000;
+    border-bottom: solid 4px #000000;
+    border-right: solid 4px #000000;
     border-radius: 8px;
     background: #fff;
     box-sizing: border-box;
@@ -158,6 +161,12 @@
 .recipe-presentation {
     display: flex;
     gap: 3rem;
+}
+
+.presentation ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
 .presentation-img img {
