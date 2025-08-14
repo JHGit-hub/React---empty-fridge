@@ -1,3 +1,70 @@
+/****** RESET ******/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 500px;
+    height: 100vh;
+    background-color: var(--primary-color);
+}
+
+
+/****** FONTS ******/
+
+@font-face {
+    font-family: "ADLAM";
+    src: url(assets/fonts/ADLaMDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: "jura";
+    src: url(assets/fonts/Jura-Regular.ttf);
+}
+
+h1 {
+    font-family: "ADLAM";
+    font-size: 2.6rem;
+}
+
+h2 {
+    font-family: "ADLAM";
+    font-size: 1.375rem;
+}
+
+h3 {
+    font-family: "ADLAM";
+    font-size: 1.125rem;
+}
+
+h4{
+    font-family: "ADLAM";
+    font-size: 1rem;
+}
+p {
+    font-family: "jura";
+    font-size: 1rem;
+}
+
+
+/****** COLORS ******/
+
+
+:root {
+  --primary-color: #FFF1EA;
+  --secondary-color: #FF5900;
+}
+
+
+
+
+
+
+
+/*
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -66,3 +133,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/

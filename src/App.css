@@ -1,42 +1,106 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/****** CARD ******/
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.list-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .card {
-  padding: 2em;
+    width: 170px;
+    height: 230px;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px #222;
+    border-radius: 8px;
+    background: #fff;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.card-img {
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-img img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-text {
+    height: 56px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.3em;
+    font-size: 1.1em;
+    font-family: 'Fredoka', Arial, sans-serif;
+}
+
+/****** CTA ******/
+
+.cta-button {
+    background: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-top: solid 2px #000000;
+    border-left: solid 2px #000000;
+    border-bottom: solid 4px #000000;
+    border-right: solid 4px #000000;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+.cta-button{
+    text-decoration: none;
+}
+
+.CTAButton:hover {
+    background: darken(var(--secondary-color), 10%);
+}
+
+
+
+/****** PAGE ******/
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 2rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.title img {
+    width: 278px;
+}
+
+.title p {
+    text-align: center;
 }
