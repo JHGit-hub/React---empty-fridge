@@ -6,23 +6,28 @@ import cookingSvg from "../../assets/svg-icons/cooking.svg";
 import { useList } from "../../contexts/ListContext";
 import IngredientsList from "../ingredients/ingredients";
 import StepList from "../Steps/steps";
+import { useParams } from "react-router";
+import Navbar from "../NavBar/Navbar";
 
 
-export default function Recipe({ id }) {
+export default function Recipe() {
 
+    const { id } = useParams();
     const { list } = useList();
     const recipe = list.find(item => item.id === Number(id));
 
     return (
-
-        <div>
-            <BackBtn to="/list-recipe" />
-            <div>
-                <div className="recipe-header">
-                    <div className="recipe-header-img">
+        <div className="page">
+            <div className="recipe-page">
+                <div className="header-recipe">
+                    <BackBtn to="/list-recipe" />
+                    <h3>{recipe.nom}</h3>
+                </div>
+                <div className="recipe-presentation">
+                    <div className="presentation-img">
                         <img src={recipe.image} alt={`illustration de la recette ${recipe.nom}`} />
                     </div>
-                    <div className="recipe-header-text">
+                    <div className="presentation-text">
                         <div className="presentation">
                             <ul>
                                 <li>
@@ -42,16 +47,18 @@ export default function Recipe({ id }) {
                         <div>add to favorite</div>
                     </div>
                 </div>
-                <div className="recipe-ingredients">
-                    <h4>Ingrédients</h4>
-                    <IngredientsList ingredients={recipe.ingredients} />
-                </div>
-                <div className="recipe-steps">
-                    <h4>Étapes</h4>
-                    <StepList steps={recipe.etapes} />
+                <div className="recipe-detail">
+                    <div className="recipe-ingredients">
+                        <h4>Ingrédients</h4>
+                        <IngredientsList ingredients={recipe.ingredients} />
+                    </div>
+                    <div className="recipe-steps">
+                        <h4>Étapes</h4>
+                        <StepList steps={recipe.etapes} />
+                    </div>
                 </div>
             </div>
-
+            <Navbar />
         </div>
     );
 }

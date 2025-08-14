@@ -2,12 +2,11 @@ import Card from '../cards/Card';
 import { useList } from '../../contexts/ListContext';
 import Navbar from '../NavBar/Navbar';
 import BackBtn from '../buttons/Backbtn';
-import { NavLink, useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 
 export default function List() {
 
     const { list } = useList();
-    const { id } = useParams();
 
     return (
 
@@ -19,7 +18,9 @@ export default function List() {
                 </div>
                 <div className="list-card">
                     {list.map((recipe) => (
-                        <Card key={recipe.id} recipe={recipe} />
+                        <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
+                            <Card recipe={recipe} />
+                        </Link>
                     ))}
                 </div>
             </div>

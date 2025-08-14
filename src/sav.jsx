@@ -15,4 +15,12 @@
                 </div>
 
 
+                <div className="list-card">
+                    {list.map((recipe) => (
+                        <Card key={recipe.id} recipe={recipe} />
+                    ))}
+                </div>
+
+
+
 <Card key={recipe.id} recipe={recipe} /> */}

@@ -69,13 +69,6 @@
     color: white;
     font-size: 1rem;
 }
-.cta-button{
-    text-decoration: none;
-}
-
-.CTAButton:hover {
-    background: darken(var(--secondary-color), 10%);
-}
 
 
 
@@ -85,9 +78,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    max-height: 100vh;
     gap: 2rem;
+    margin-top:3rem;
 }
 
 .title {
@@ -103,4 +96,73 @@
 
 .title p {
     text-align: center;
+}
+
+/****** LIST ******/
+
+.list-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:4rem 0;
+    gap:2rem;
+    padding: 0 2rem;
+}
+
+.header-list, .header-recipe {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 5rem;
+}
+
+/****** NAVBAR ******/
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #000000;
+    padding: 1rem;
+    position:fixed;
+    bottom:0;
+}
+
+/****** RECIPE ******/
+
+.recipe-page {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.recipe-presentation {
+    display: flex;
+    gap: 3rem;
+}
+
+.presentation-img img{
+    width:164px;
+    border-radius: 8px;
+}
+
+.presentation-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.presentation-text ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.presentation-text li{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }

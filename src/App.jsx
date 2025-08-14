@@ -16,7 +16,7 @@ function App() {
                 <Route path="/list-recipe" element={<List />} />
                 <Route path="/" element={<SplashScreen />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/detail-recipe/:id" element={<Recipe />} />
+                <Route path="/recipe/:id" element={<Recipe />} />
                 <Route path="/list-recipe" element={<List />} />
             </Routes >
         </BrowserRouter>

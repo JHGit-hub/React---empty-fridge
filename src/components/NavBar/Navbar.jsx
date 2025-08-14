@@ -1,4 +1,7 @@
 import { NavLink } from "react-router";
+import houseSvg from '../../assets/svg-icons/house.svg';
+import listBulletSvg from '../../assets/svg-icons/list-bullets.svg';
+import bookSvg from '../../assets/svg-icons/book.svg';
 
 export default function Navbar() {
 
@@ -6,13 +9,13 @@ export default function Navbar() {
     
         <div className="navbar">
             <NavLink to="/home">
-                <img src='assets/svg-icons/house.svg' alt='Home' />
+                <img src={houseSvg} alt='Home' />
             </NavLink>
-            <NavLink to="/list">
-                <img src='assets/svg-icons/list-bullets.svg' alt='List' />
+            <NavLink to="/list-recipe">
+                <img src={listBulletSvg} alt='List' />
             </NavLink>
             <NavLink to="/favorite">
-                <img src='assets/svg-icons/book.svg' alt='Favorite' />
+                <img src={bookSvg} alt='Favorite' />
             </NavLink>
         </div>
 
