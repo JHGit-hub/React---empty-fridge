@@ -1,0 +1,22 @@
+import { useIngredient } from "../../contexts/IngredientContext";
+
+export default function Formulaire() {
+
+    const { currentIngredientName, setCurrentIngredientName, addIngredientToList } = useIngredient();
+
+    function handleChange(event) {
+        setCurrentIngredientName(event.target.value);
+    }
+
+    return (
+        <div className="filter-form">
+            <input 
+                type="text" 
+                name="ingredient" 
+                value={currentIngredientName === null ? "" : currentIngredientName} 
+                onChange={handleChange} 
+            />
+            <button onClick={addIngredientToList} className="cta-button">Ajouter Ingrédient</button>
+        </div>
+    );
+}
