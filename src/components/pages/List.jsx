@@ -2,7 +2,7 @@ import Card from '../cards/Card';
 import { useList } from '../../contexts/ListContext';
 import Navbar from '../NavBar/Navbar';
 import BackBtn from '../buttons/Backbtn';
-import { Link, useParams } from 'react-router';
+import { Link } from 'react-router';
 
 export default function List() {
 

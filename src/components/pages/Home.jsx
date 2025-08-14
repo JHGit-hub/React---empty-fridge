@@ -2,12 +2,12 @@ import CTAButton from "../buttons/cta";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import Navbar from "../NavBar/Navbar";
 import Formulaire from "../formulaire/Formulaire";
+import { useIngredient } from "../../contexts/IngredientContext.jsx";
 
 
 export default function Home() {
 
-
-
+    const { ingredients, removeIngredient } = useIngredient();
 
     return (
         <div className="page">
@@ -15,20 +15,20 @@ export default function Home() {
                 <h3>Ajouter Ingrédients</h3>
             </div>
             <Formulaire />
-            <ul className="filter-list">
-                {list.map(task =>
-                    <li key={task.id} className="liste">
-                        <input onChange={() => boxChecked(task.id)} type="checkbox" value="" />
-                        <p style={{ textDecoration: task.closed ? "line-through" : "none" }}>
-                            {task.content}
-                        </p>
-                        <button onClick={() => deleteTask(task.id)}>
-                            <RiDeleteBin5Line size={15} />
-                        </button>
-                    </li>
-                )}
-            </ul>
-
+            <div className="filter-list">
+                <h2>Dans mon Frigo j'ai :</h2>
+                <ul>
+                    {ingredients.map(ingredient =>
+                        <li key={ingredient.id} className="ingredients-filter">
+                            <p>{ingredient.name}</p>
+                            <button onClick={() => removeIngredient(ingredient.id)}>
+                                <RiDeleteBin5Line size={15} />
+                            </button>
+                        </li>
+                    )}
+                </ul>
+            </div>
+            <CTAButton to="/list-recipe" label={"GO"}/>
             <Navbar />
         </div>
     );

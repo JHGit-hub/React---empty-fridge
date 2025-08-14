@@ -16,7 +16,7 @@ export default function Formulaire() {
                 value={currentIngredientName === null ? "" : currentIngredientName} 
                 onChange={handleChange} 
             />
-            <button onClick={addIngredientToList} className="cta-button">Ajouter Ingrédient</button>
+            <button onClick={addIngredientToList} className="cta-btn">Ajouter Ingrédient</button>
         </div>
     );
 }
