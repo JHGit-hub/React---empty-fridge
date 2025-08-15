@@ -115,6 +115,15 @@
     text-align: center;
 }
 
+.splash-page {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
 /****** LIST ******/
 
 .list-page {

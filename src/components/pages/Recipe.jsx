@@ -44,7 +44,7 @@ export default function Recipe() {
                                 </li>
                             </ul>
                         </div>
-                        <div>add to favorite</div>
+                        <div>Ajouter aux favoris</div>
                     </div>
                 </div>
                 <div className="recipe-detail">
