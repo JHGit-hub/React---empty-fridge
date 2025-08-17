@@ -2,10 +2,10 @@
 
 
 .list-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    justify-items: start;
     max-width: 500px;
     margin: 0 auto;
     padding: 1rem;
@@ -46,6 +46,14 @@
     border-radius: 8px;
 }
 
+.favorite-mark {
+    position: absolute;
+    z-index: 1000;
+    color: #FF5900;
+    right: 5%;
+    top:0;
+}
+
 .card-text {
     height: 56px;
     width: 100%;
@@ -84,7 +92,7 @@
     border-radius: 8px;
     color: white;
     font-size: 2rem;
-    margin-top:3rem;
+    margin-top: 3rem;
 }
 
 
@@ -146,6 +154,7 @@
 /****** NAVBAR ******/
 
 .navbar {
+    position:relative;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -155,6 +164,22 @@
     position: fixed;
     bottom: 0;
     height: 60px
+}
+
+.favorite-nbr {
+    text-align: center;
+    width: 24px;
+    padding: 5px;
+    background-color: #FF5900;
+    border-radius: 200px;
+    border: solid 1px #FF5900;
+    z-index: 1000;
+    right: 14%;
+    top: 0;
+    position: absolute;
+    font-family: "jura";
+    font-size: 1rem;
+    color: #ffffff;
 }
 
 /****** RECIPE ******/
@@ -172,7 +197,7 @@
     gap: 3rem;
 }
 
-.presentation ul{
+.presentation ul {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
@@ -260,7 +285,7 @@
     border-right: solid 4px #000000;
     padding: 2rem;
     display: flex;
-    gap:2rem;
+    gap: 2rem;
     flex-direction: column;
 }
 
@@ -274,4 +299,19 @@
     border: none;
     width: 40px;
     background-color: #ffffff;
+}
+
+/****** FAVORITE ******/
+
+.add-favorite {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    font-family: "ADLAM";
+}
+
+.add-favorite span {
+    font-family: "ADLAM";
+    font-weight: 400;
 }

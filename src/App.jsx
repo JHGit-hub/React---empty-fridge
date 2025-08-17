@@ -4,6 +4,7 @@ import List from './components/pages/List'
 import Home from './components/pages/Home'
 import SplashScreen from './components/pages/SplashScreen'
 import Recipe from './components/pages/Recipe'
+import Favorite from './components/pages/Favorite'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/recipe/:id" element={<Recipe />} />
                 <Route path="/list-recipe" element={<List />} />
+                <Route path="/favorite" element={<Favorite />} />
             </Routes >
         </BrowserRouter>
 

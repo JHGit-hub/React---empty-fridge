@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.jsx'
 import ListProvider from './contexts/ListContext.jsx'
 import { IngredientProvider } from './contexts/IngredientContext.jsx'
+import { FavoriteProvider } from './contexts/FavoriteContext.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <IngredientProvider>
             <ListProvider>
-                <App />
+                <FavoriteProvider>
+                    <App />
+                </FavoriteProvider>
             </ListProvider>
         </IngredientProvider>
     </StrictMode>,

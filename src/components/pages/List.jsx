@@ -23,15 +23,17 @@ export default function List() {
         recipList = list;
     } else {
         // on compare les noms des ingredients avec les ingredient de la liste
-        // il faut faire le .find() dans le .filter() pour boucler sur toutes les recettes
-        // si on .find() en dehors, on n'aura que la dernière recette qui repond à la condition
 
-        // .filter va parcourir la liste des recettes et ne garder que celles où la condition est validée
+        // .filter va parcourir la liste des recettes et ne garder que celles qui ont au moins 1 ingredients de la liste de filtrage
         recipList = list.filter(recipe =>
-        // .find  (ici la condition) va chercher si au moins un ingredient de la recette est dans la liste des ingredients du frigo
-            recipe.ingredients.find(
-                ingredient => ingredientNames.includes(ingredient.nom.toLowerCase())
-            ))
+            // .find va chercher si au moins un ingredient de la recette est dans la liste des ingredients du frigo
+            recipe.ingredients.find(ingredient => 
+                // .some va tester chaque nom d'ingredient du frigo
+                ingredientNames.some(name =>
+                    // includes va tester si le nom de l'ingredient du frigoest dans le nom de l'ingredient de la recette et retourner un boolean
+                    ingredient.nom.toLowerCase().includes(name)
+                )
+            ))  ;
         };
 
 

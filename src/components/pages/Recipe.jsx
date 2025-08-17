@@ -2,18 +2,22 @@ import BackBtn from "../buttons/Backbtn";
 import clockSvg from "../../assets/svg-icons/clock.svg";
 import userSvg from "../../assets/svg-icons/user.svg";
 import cookingSvg from "../../assets/svg-icons/cooking.svg";
+import { MdBookmarkBorder } from "react-icons/md";
+import { IoMdBookmark } from "react-icons/io";
 
 import { useList } from "../../contexts/ListContext";
 import IngredientsList from "../ingredients/ingredients";
 import StepList from "../Steps/steps";
 import { useParams } from "react-router";
 import Navbar from "../NavBar/Navbar";
+import { useFavorite } from "../../contexts/FavoriteContext";  
 
 
 export default function Recipe() {
 
     const { id } = useParams();
     const { list } = useList();
+    const { favorites, toggleFavorite } = useFavorite();
     const recipe = list.find(item => item.id === Number(id));
 
     return (
@@ -44,7 +48,10 @@ export default function Recipe() {
                                 </li>
                             </ul>
                         </div>
-                        <div>Ajouter aux favoris</div>
+                        <div className="add-favorite" onClick={() => toggleFavorite(recipe.id)}>
+                            {favorites.includes(recipe.id) ? <IoMdBookmark /> : <MdBookmarkBorder />}
+                            {favorites.includes(recipe.id) ? <span> Retirer des favoris</span> : <span> Ajouter aux favoris</span>}
+                        </div>
                     </div>
                 </div>
                 <div className="recipe-detail">

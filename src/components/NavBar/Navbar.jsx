@@ -2,8 +2,11 @@ import { NavLink } from "react-router";
 import { GoHome } from "react-icons/go";
 import { IoIosList } from "react-icons/io";
 import { LuBook } from "react-icons/lu";
+import { useFavorite } from "../../contexts/FavoriteContext";
 
 export default function Navbar() {
+
+    const { favorites } = useFavorite();
 
     return (
 
@@ -26,6 +29,7 @@ export default function Navbar() {
                 })}>
                 <LuBook size={26} />
             </NavLink>
+            {favorites.length !== 0 ? <div className="favorite-nbr"><p>{favorites.length}</p></div> : ""}
         </div>
 
     )
