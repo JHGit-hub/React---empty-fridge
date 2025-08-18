@@ -18,7 +18,6 @@ function App() {
                 <Route path="/" element={<SplashScreen />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/recipe/:id" element={<Recipe />} />
-                <Route path="/list-recipe" element={<List />} />
                 <Route path="/favorite" element={<Favorite />} />
             </Routes >
         </BrowserRouter>
