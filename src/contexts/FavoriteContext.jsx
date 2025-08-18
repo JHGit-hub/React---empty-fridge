@@ -1,4 +1,5 @@
 import { useState, createContext, useContext, useEffect } from "react";
+// Hook pour utiliser le contexte des favoris
 
 const favoriteContext = createContext();
 
@@ -15,26 +16,28 @@ export function FavoriteProvider({ children }) {
 
     useEffect(() => {
         // a chaque changement, on met a jour le localStorage
+        // la dépendance est la liste des favoris
         localStorage.setItem("favoriteListId", JSON.stringify(favorites));
     }, [favorites]);
 
     function addToFavorite(id) {
-        // Ajoute l'id de la recette au tableau des favoris
+        // Ajouter l'id de la recette au tableau des favoris
         if (!favorites.includes(id)) {
             setFavorites([...favorites, id]);
-            console.log("Favoris après ajout :", [...favorites, id]);
+            console.log("Favoris après ajout :", [...favorites, id]); // console.log pour test
         }
     }
 
     function removeFromFavorite(id) {
-        // retire l'id de la recette du tableau des favoris
+        // retirer l'id de la recette du tableau des favoris
         if (favorites.includes(id)) {
+            // On reconstruit un tableau des id des recettes des favoris en excluant celui qui à l'id passé en paramètre
             setFavorites(favorites.filter(favoriteId => favoriteId !== id));
         }
     }
 
     function toggleFavorite(id) {
-        // verifie si l'id est dans le tableau et le retire si oui, l'ajout si non
+        // On verifie si l'id est dans le tableau des favoris et on le retire si oui, on l'ajout si non
         if (favorites.includes(id)) {
             removeFromFavorite(id);
         } else {
@@ -43,12 +46,14 @@ export function FavoriteProvider({ children }) {
     }
 
     return (
+        // Fournit le contexte des favoris aux composants enfants
         <favoriteContext.Provider value={{ favorites, toggleFavorite }}>
             {children}
         </favoriteContext.Provider>
     );
 }
 
+// Création d'un Hook personnalisé pour la gestion des favoris
 export function useFavorite() {
     return useContext(favoriteContext);
 }

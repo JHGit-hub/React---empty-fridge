@@ -9,7 +9,8 @@ export default function Navbar() {
     const { favorites } = useFavorite();
 
     return (
-
+        // Composant qui affiche la navbar de l'application
+        // effet de style selon si la page est active ou non
         <div className="navbar">
             <NavLink to="/home"
                 style={({ isActive }) => ({
@@ -29,6 +30,7 @@ export default function Navbar() {
                 })}>
                 <LuBook size={26} />
             </NavLink>
+            {/* Affichage du nombre de favoris, si diffrent de 0 */}
             {favorites.length !== 0 ? <div className="favorite-nbr"><p>{favorites.length}</p></div> : ""}
         </div>
 

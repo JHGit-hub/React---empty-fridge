@@ -12,6 +12,7 @@ export default function Favorite() {
     const { list } = useList();
 
     return (
+        // page qui affiche la liste des recettes favorites
         <div>
             <div className="page">
                 <div className="list-page">
@@ -20,6 +21,7 @@ export default function Favorite() {
                         <h3>Mes recettes Favorites</h3>
                     </div>
                     <div className="list-card">
+                        {/* On boucle sur la liste des favoris et on y intégre leur id dans un lien vers la recette */}
                         {favorites.map((id) => {
                             const favRecipe = list.find((recipe) => recipe.id === id);
                             return (

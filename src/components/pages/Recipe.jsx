@@ -10,7 +10,7 @@ import IngredientsList from "../ingredients/ingredients";
 import StepList from "../Steps/steps";
 import { useParams } from "react-router";
 import Navbar from "../NavBar/Navbar";
-import { useFavorite } from "../../contexts/FavoriteContext";  
+import { useFavorite } from "../../contexts/FavoriteContext";
 
 
 export default function Recipe() {
@@ -21,6 +21,7 @@ export default function Recipe() {
     const recipe = list.find(item => item.id === Number(id));
 
     return (
+        // page qui affiche le détail d'une recette
         <div className="page">
             <div className="recipe-page">
                 <div className="header-recipe">
@@ -48,7 +49,9 @@ export default function Recipe() {
                                 </li>
                             </ul>
                         </div>
+                        {/* affichage du bouton des favoris */}
                         <div className="add-favorite" onClick={() => toggleFavorite(recipe.id)}>
+                            {/*On affiche une icone et un texte spécifique selon si la recette fait partie des favorites ou non */}
                             {favorites.includes(recipe.id) ? <IoMdBookmark /> : <MdBookmarkBorder />}
                             {favorites.includes(recipe.id) ? <span> Retirer des favoris</span> : <span> Ajouter aux favoris</span>}
                         </div>

@@ -10,6 +10,7 @@ export default function Home() {
     const { ingredients, removeIngredient } = useIngredient();
 
     return (
+        // page qui affiche un formulaire de recherche des recettes par ingrédients 
         <div className="page">
             <div>
                 <h3>Ajouter Ingrédients</h3>
@@ -28,7 +29,7 @@ export default function Home() {
                     )}
                 </ul>
             </div>
-            <CTAButton to="/list-recipe" label={"GO"}/>
+            <CTAButton to="/list-recipe" label={"GO"} />
             <Navbar />
         </div>
     );

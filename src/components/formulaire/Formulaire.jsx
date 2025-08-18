@@ -9,6 +9,7 @@ export default function Formulaire() {
     }
 
     return (
+        // Composant qui affiche le formulaire de filtre
         <div className="filter-form">
             <input 
                 type="text" 

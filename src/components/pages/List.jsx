@@ -19,22 +19,22 @@ export default function List() {
     let recipList = []; // liste des recettes a affichées
 
     if (ingredientNames.length === 0) {
-        // si recipList est vide, on affiche toutes les recettes par defaut
+        // si la liste des ingredients est vide, on affiche toutes les recettes par defaut
         recipList = list;
     } else {
         // on compare les noms des ingredients avec les ingredient de la liste
 
         // .filter va parcourir la liste des recettes et ne garder que celles qui ont au moins 1 ingredients de la liste de filtrage
         recipList = list.filter(recipe =>
-            // .some va tester chaque nom d'ingredient du frigo
-            ingredientNames.some(name => 
-                // includes va tester si le nom de l'ingredient du frigo est contenu dans le nom de l'ingredient de la recette
+            // .some va tester chaque nom d'ingredient du frigo (condition de .filter())
+            ingredientNames.some(name =>
+                // includes va verifier si le nom de l'ingredient du frigo est inclus dans le nom de l'ingredient de la recette
                 recipe.ingredients.some(ingredient => ingredient.nom.toLowerCase().includes(name)))
         );
     }
 
     return (
-
+        // page qui affiche la liste des recettes filtrées ou toutes par defaut
         <div className="page">
             <div className="list-page">
                 <div className="header-list">
@@ -42,9 +42,11 @@ export default function List() {
                     <h3>Suggestions de Recette</h3>
                 </div>
                 <div className="list-card">
+                    {/* si aucun ingredient ne correspond a une recette, donc recipList est vide, alors on affiche un message */}
                     {recipList.length === 0 ? (
                         <p>Aucune recette avec les ingrédients de ton frigo</p>
                     ) : (
+                        // On boucle sur la liste des recettes et on y intégre leur id dans un lien vers la recette
                         recipList.map((recipe) => (
                             <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
                                 <Card recipe={recipe} />

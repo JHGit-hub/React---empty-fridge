@@ -3,6 +3,7 @@ import CTAButton from "../buttons/cta";
 export default function SplashScreen() {
 
     return (
+        // page d'accueil de l'application
         <div className="page">
             <div className="splash-page">
                 <div className="title">

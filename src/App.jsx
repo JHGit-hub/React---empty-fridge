@@ -11,7 +11,7 @@ function App() {
 
 
     return (
-
+        // Utilisation de BrowserRouter pour gérer les routes de l'application
         <BrowserRouter>
             <Routes>
                 <Route path="/list-recipe" element={<List />} />
