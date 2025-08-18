@@ -12,13 +12,13 @@ export default function List() {
 
     // A partir de la liste des ingredients, on va extraire que les noms d'ingredients
     // on utilise .toLowerCase() pour tout mettre en minuscule
-    const ingredientNames = ingredients.map(ingredient => ingredient.name.toLowerCase());
+    const ingredientToFilter = ingredients.map(ingredient => ingredient.name.toLowerCase());
 
 
     // Filtrer la liste des recettes pour ne garder que celles qui contiennent les ingredients
     let recipList = []; // liste des recettes a affichées
 
-    if (ingredientNames.length === 0) {
+    if (ingredientToFilter.length === 0) {
         // si la liste des ingredients est vide, on affiche toutes les recettes par defaut
         recipList = list;
     } else {
@@ -26,9 +26,10 @@ export default function List() {
 
         // .filter va parcourir la liste des recettes et ne garder que celles qui ont au moins 1 ingredients de la liste de filtrage
         recipList = list.filter(recipe =>
-            // .some va tester chaque nom d'ingredient du frigo (condition de .filter())
-            ingredientNames.some(name =>
-                // includes va verifier si le nom de l'ingredient du frigo est inclus dans le nom de l'ingredient de la recette
+
+            // on va vérifier si dans la liste des ingrédients de la recette (recipe.ingredients),
+            // il existe au moins un ingrédient dont le nom inclut le nom du frigo (name, issu de la liste ingredientToFilter).
+            ingredientToFilter.some(name =>
                 recipe.ingredients.some(ingredient => ingredient.nom.toLowerCase().includes(name)))
         );
     }
