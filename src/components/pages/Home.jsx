@@ -1,5 +1,5 @@
 import CTAButton from "../buttons/cta";
-import { RiDeleteBin5Line } from "react-icons/ri";
+import { RxCross2 } from "react-icons/rx";
 import Navbar from "../NavBar/Navbar";
 import Formulaire from "../formulaire/Formulaire";
 import { useIngredient } from "../../contexts/IngredientContext.jsx";
@@ -23,7 +23,7 @@ export default function Home() {
                         <li key={ingredient.id} className="ingredients-filter">
                             <p>{ingredient.name}</p>
                             <button onClick={() => removeIngredient(ingredient.id)}>
-                                <RiDeleteBin5Line size={15} />
+                                <RxCross2 size={25} />
                             </button>
                         </li>
                     )}
