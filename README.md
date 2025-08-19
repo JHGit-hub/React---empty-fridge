@@ -1,12 +1,38 @@
-# React + Vite
+<h1 align="center">Welcome to empty-fridge 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> empty-fridge
 
-Currently, two official plugins are available:
+## Title
+Frigo Vide
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Frigo Vide** te permet de trouver des idées de recettes selon les ingrédients que tu as sous la main.  
+Entre ce qu’il te reste dans ton frigo et découvre des recettes adaptées, que tu peux ajouter à tes favoris pour les retrouver plus tard.
 
-## Expanding the ESLint configuration
+### Fonctionnalités principales
+- Ajout d’ingrédients
+- Affichage des recettes correspondant aux ingrédients sélectionnés
+- Consultation du détail d’une recette
+- Ajout de recettes en favoris
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔥 Pour aller plus loin
+- Sauvegarde des recettes favorites dans le local storage
+
+### Figma
+https://www.figma.com/design/iMO3hfISzN2Jbc5Y4mvyMr/frigo-vide--Copy-?node-id=0-1&p=f&t=DLuuHP4Jlyv2AJG0-0
+
+### Technology used
+
+- react
+- html
+- css
+- json
+
+## Author
+
+👤 **Julien -promo 2025**
+
+* Github: [@JHGit-hub](https://github.com/JHGit-hub)
+
