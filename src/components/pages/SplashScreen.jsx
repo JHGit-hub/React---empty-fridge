@@ -1,4 +1,4 @@
-import CTAButton from "../buttons/cta";
+import CTAButton from "../buttons/CTA-rename";
 
 export default function SplashScreen() {
 
