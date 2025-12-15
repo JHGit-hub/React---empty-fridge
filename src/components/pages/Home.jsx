@@ -1,4 +1,4 @@
-import CTAButton from "../buttons/CTA-rename.jsx";
+import CTAButton from "../buttons/CTA.jsx";
 import { RxCross2 } from "react-icons/rx";
 import Navbar from "../NavBar/Navbar";
 import Formulaire from "../formulaire/Formulaire";
