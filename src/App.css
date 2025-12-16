@@ -102,10 +102,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 100vh;
+    min-height: 100dvh;
     gap: 2rem;
-    margin-top: 3rem;
-    padding-bottom: 60px;
+    margin-top: 1.5rem;
+    padding-bottom: 80px;
 }
 
 .title {
@@ -124,12 +124,13 @@
 }
 
 .splash-page {
-    height: 800px;
+    min-height: calc(100dvh - 80px);
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 /****** LIST ******/
@@ -318,4 +319,30 @@
 .add-favorite span {
     font-family: "ADLAM";
     font-weight: 400;
+}
+
+/****** RESPONSIVE ******/
+
+
+@media (max-width: 480px) {
+
+    .primary-btn {
+        width: 100%;
+        max-width: 320px;
+        padding: 1rem;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .list-card {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 280px;
+    }
+
 }
